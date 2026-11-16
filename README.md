@@ -21,16 +21,6 @@ Roon sees `hw:imxaudiorouter` device 9 (SPDIF) and devices 10/11 (AVB virtual pl
 
 Run the same command again to reinstall the latest version; settings are kept.
 
-## Why not Roon's own installer
-
-`roonbridge-installer-linuxarmv7hf.sh` from Roon does not work as is on a Savant audio server:
-
-| Issue | This script |
-|---|---|
-| Downloads from `download.roonlabs.com` without following redirects: it saves the 301 page and fails with *"not a bzip2 file"* | downloads from `download.roonlabs.net`, redirects followed |
-| Must be run as root (the `RPM` account cannot) | switches to root with `su` |
-| Installs in `/opt/RoonBridge` and `/var/roon`, erased by Savant firmware updates: the bridge disappears and comes back as a new device | installs in `/data/RPM/savant-audio-roon`, which firmware updates keep |
-
 A previous install made with Roon's script is migrated (its identity and settings are kept).
 
 ## After a Savant firmware update
